@@ -57,7 +57,6 @@ if (! eval { $k->load_db($file, $password) }) {
 
 $k->unlock;
 my @e = $k->find_entries($search);
-$k->lock;
 
 # Scrub the entries a bit
 foreach my $entry (@e) {
@@ -79,5 +78,6 @@ if (@e == 0) {
 }
 
 print to_json($entries)."\n";
+$k->lock;
 
 exit 0;
