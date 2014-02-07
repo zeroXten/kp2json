@@ -27,7 +27,7 @@ EOF
 }
 
 my $file;
-my $search = {};
+my $search = {'group_title !~' => qr/backup/i};
 
 if (@ARGV >= 2) {
   $file = shift @ARGV;
